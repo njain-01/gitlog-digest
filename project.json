@@ -1,0 +1,8 @@
+{
+  "name": "gitlog-digest",
+  "description": "CLI that turns git history into a weekly changelog, offline by default with an optional LLM mode",
+  "stack": "Go",
+  "build": "go build ./...",
+  "test": "go vet ./... && go test ./...",
+  "topics": ["go", "git", "changelog", "cli", "developer-tools", "llm"]
+}
