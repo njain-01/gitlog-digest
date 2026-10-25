@@ -89,6 +89,17 @@ func TestRenderMarkdown(t *testing.T) {
 	}
 }
 
+func TestRenderSingularAuthor(t *testing.T) {
+	var buf bytes.Buffer
+	weeks := Build(sample()[2:])
+	if err := RenderMarkdown(&buf, weeks); err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(buf.String(), "1 commits, 1 author,") {
+		t.Errorf("singular author wrong:\n%s", buf.String())
+	}
+}
+
 func TestRenderEmpty(t *testing.T) {
 	var md, js bytes.Buffer
 	if err := RenderMarkdown(&md, nil); err != nil || !strings.Contains(md.String(), "No commits") {

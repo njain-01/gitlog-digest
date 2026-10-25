@@ -103,7 +103,11 @@ func RenderMarkdown(out io.Writer, weeks []Week) error {
 		if w.Summary != "" {
 			b.WriteString(w.Summary + "\n\n")
 		}
-		fmt.Fprintf(&b, "_%d commits, %d authors, +%d/-%d lines_\n", w.Commits, w.Authors, w.Additions, w.Deletions)
+		authors := "authors"
+		if w.Authors == 1 {
+			authors = "author"
+		}
+		fmt.Fprintf(&b, "_%d commits, %d %s, +%d/-%d lines_\n", w.Commits, w.Authors, authors, w.Additions, w.Deletions)
 		for _, cat := range classify.Order {
 			var lines []string
 			for _, e := range w.Entries {
