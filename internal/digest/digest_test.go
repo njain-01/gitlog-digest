@@ -22,8 +22,8 @@ func at(s string) time.Time {
 func sample() []gitlog.Commit {
 	return []gitlog.Commit{
 		{Hash: "aaaaaaaa1", Author: "Ada", When: at("2026-10-25T10:00:00Z"), Subject: "feat(cli)!: new flags", Additions: 10, Deletions: 1}, // Sunday, W43
-		{Hash: "bbbbbbbb2", Author: "Bob", When: at("2026-10-19T00:00:00Z"), Subject: "fix: crash", Additions: 2, Deletions: 2},          // Monday, W43
-		{Hash: "cccccccc3", Author: "Ada", When: at("2026-10-18T23:59:59Z"), Subject: "docs: readme", Additions: 5},                      // Sunday, W42
+		{Hash: "bbbbbbbb2", Author: "Bob", When: at("2026-10-19T00:00:00Z"), Subject: "fix: crash", Additions: 2, Deletions: 2},             // Monday, W43
+		{Hash: "cccccccc3", Author: "Ada", When: at("2026-10-18T23:59:59Z"), Subject: "docs: readme", Additions: 5},                         // Sunday, W42
 	}
 }
 
